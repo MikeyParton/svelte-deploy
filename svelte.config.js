@@ -19,7 +19,10 @@ const config = {
       strict: true,
     }),
     version: {
-      name: child_process.execSync("git rev-parse HEAD").toString().trim(),
+      name: child_process
+        .execSync("git rev-parse --short HEAD")
+        .toString()
+        .trim(),
     },
   },
 };
